@@ -77,4 +77,21 @@ r2 = r2_score(y_test, y_pred)
 
 print(f"\nModel Evaluation:")
 print(f"Mean Absolute Error (MAE): {mae:.2f} kW")
+
 print(f"R-squared (R2) Score: {r2:.4f}")
+
+import pickle
+
+# --- Save the trained model ---
+model_filename = "solar_prediction_model.pkl"
+
+with open(model_filename, "wb") as file:
+    pickle.dump(model, file)  # replace rf_model with your model variable name
+
+print(f"✅ Model saved successfully as {model_filename}")
+
+#Output:
+            # Model Evaluation:
+            # Mean Absolute Error (MAE): 34.00 kW
+            # R-squared (R2) Score: 0.9261
+            # ✅ Model saved successfully as solar_prediction_model.pkl
