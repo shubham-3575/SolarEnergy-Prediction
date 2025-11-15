@@ -6,12 +6,12 @@ Uses a pre-trained Random Forest model to predict AC power output from solar pan
 import tkinter as tk
 from tkinter import ttk, messagebox
 import pandas as pd
-import pickle
+from joblib import load
 import os
 from typing import Optional, Dict, Any, Tuple
 
 # --- Constants ---
-MODEL_FILE_NAME = 'solar_prediction_model.pkl'
+MODEL_FILE_NAME = 'model.joblib'
 DATE_FORMAT = '%Y-%m-%d %H:%M'
 MIN_AMBIENT_TEMP = -50.0
 MAX_AMBIENT_TEMP = 60.0
@@ -397,4 +397,5 @@ root.after(100, lambda: load_model(silent=True))
 
 # Run the GUI
 if __name__ == "__main__":
+
     root.mainloop()
