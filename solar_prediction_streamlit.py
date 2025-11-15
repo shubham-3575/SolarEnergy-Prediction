@@ -5,12 +5,12 @@ Uses a pre-trained Random Forest model to predict AC power output from solar pan
 
 import streamlit as st
 import pandas as pd
-import pickle
+from joblib import load
 import os
 from typing import Dict, Any, Optional, Tuple
 
 # --- Constants ---
-MODEL_FILE_NAME = 'solar_prediction_model.pkl'
+MODEL_FILE_NAME = 'model.joblib'
 DATE_FORMAT = '%Y-%m-%d %H:%M'
 MIN_AMBIENT_TEMP = -50.0
 MAX_AMBIENT_TEMP = 60.0
@@ -287,3 +287,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
