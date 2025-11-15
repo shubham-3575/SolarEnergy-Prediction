@@ -80,18 +80,13 @@ print(f"Mean Absolute Error (MAE): {mae:.2f} kW")
 
 print(f"R-squared (R2) Score: {r2:.4f}")
 
-import pickle
+import joblib
 
-# --- Save the trained model ---
-model_filename = "solar_prediction_model.pkl"
-
-with open(model_filename, "wb") as file:
-    pickle.dump(model, file)  # replace rf_model with your model variable name
-
-print(f"✅ Model saved successfully as {model_filename}")
+joblib.dump(model, "model.joblib", compress=3)
 
 #Output:
             # Model Evaluation:
             # Mean Absolute Error (MAE): 34.00 kW
             # R-squared (R2) Score: 0.9261
             # ✅ Model saved successfully as solar_prediction_model.pkl
+
